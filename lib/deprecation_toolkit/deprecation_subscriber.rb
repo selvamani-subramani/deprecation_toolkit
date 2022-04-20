@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
-require "active_support/subscriber"
+require "active_support/log_subscriber"
 
 module DeprecationToolkit
-  class DeprecationSubscriber < ActiveSupport::Subscriber
+  class DeprecationSubscriber < ActiveSupport::LogSubscriber
     def self.already_attached?
-      notifier != nil
+      @@deprecation_subscriber ||= false
+      unless @@deprecation_subscriber
+        @@deprecation_subscriber = true
+        return false
+      end
+      @@deprecation_subscriber
     end
 
     def deprecation(event)

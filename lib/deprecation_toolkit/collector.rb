@@ -35,11 +35,7 @@ module DeprecationToolkit
 
     def deprecations_without_stacktrace
       deprecations.map do |deprecation|
-        if ActiveSupport.gem_version.to_s < "5.0"
-          deprecation.sub(/\W\s\(called from .*\)$/, "")
-        else
-          deprecation.sub(/ \(called from .*\)$/, "")
-        end
+        deprecation.sub(/\W\s\(called from .*\)$/, "")
       end
     end
 

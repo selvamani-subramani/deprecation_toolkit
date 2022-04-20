@@ -20,17 +20,17 @@ Gem::Specification.new do |spec|
 
   spec.metadata['allowed_push_host'] = "https://rubygems.org"
 
-  spec.required_ruby_version = '>= 2.5'
+  spec.required_ruby_version = '>= 2.3'
 
   spec.files = %x(git ls-files -z).split("\x0").reject do |f|
     f.match(%r{^(test)/})
   end
   spec.require_paths = %w(lib)
 
-  spec.add_runtime_dependency('activesupport', '>= 4.2')
+  spec.add_runtime_dependency('activesupport', '>= 3.2')
 
-  spec.add_development_dependency("bundler", ">= 1.16")
-  spec.add_development_dependency("rake", "~> 10.0")
-  spec.add_development_dependency("minitest", "~> 5.0")
-  spec.add_development_dependency("rspec", "~> 3.0")
+  spec.add_development_dependency("bundler", ">= 1.17")
+  spec.add_development_dependency("rake", "~> 12")
+  spec.add_development_dependency("minitest", "~> 4")
+  # spec.add_development_dependency("rspec", "~> 3.0")
 end
