@@ -67,7 +67,7 @@ module DeprecationToolkit
       if DeprecationToolkit::Configuration.test_runner == :rspec
         "test_" + test.full_description.underscore.squish.tr(" ", "_")
       else
-        test.name
+        test.respond_to?(:name) ? test.name : test.__name__
       end
     end
   end

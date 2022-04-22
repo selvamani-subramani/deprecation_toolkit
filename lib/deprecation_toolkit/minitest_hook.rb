@@ -14,6 +14,6 @@ module Minitest
   class Test
     include DeprecationToolkit::Minitest
 
-    TEARDOWN_METHODS << "trigger_deprecation_toolkit_behavior"
+    # TEARDOWN_METHODS << "trigger_deprecation_toolkit_behavior"
   end
 end

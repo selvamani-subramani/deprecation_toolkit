@@ -6,5 +6,5 @@ gemspec
 
 group :deployment do
   gem 'rake'
-  gem 'rubocop'
+  # gem 'rubocop'
 end
